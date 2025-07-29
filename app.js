@@ -207,3 +207,20 @@ function getAIResponse(message) {
   if (lower.includes("emergency")) return "In case of emergency, call the campus emergency number or go directly to the nearest hospital.";
   return "I'm not sure how to help with that. Please contact the campus clinic directly for more info.";
 }
+// Toggle Login/Register Forms
+function showLoginForm() {
+  document.getElementById('loginForm').classList.remove('hidden');
+  document.getElementById('registerForm').classList.add('hidden');
+  document.getElementById('loginToggleBtn').classList.add('bg-green-800');
+  document.getElementById('registerToggleBtn').classList.remove('bg-blue-800');
+}
+
+function showRegisterForm() {
+  document.getElementById('registerForm').classList.remove('hidden');
+  document.getElementById('loginForm').classList.add('hidden');
+  document.getElementById('registerToggleBtn').classList.add('bg-blue-800');
+  document.getElementById('loginToggleBtn').classList.remove('bg-green-800');
+}
+
+// Optional: Auto-show login on load
+document.addEventListener('DOMContentLoaded', showLoginForm);
